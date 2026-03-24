@@ -14,7 +14,7 @@ export const siteContent = {
   hero: {
     badge: "9 Decades of Ayurvedic Excellence",
     title: {
-      black: "Your Sankalpa,",
+      black: "Your Sankalpa",
       green: "Our Ayurveda",
     },
     subheading: "Healing with Wisdom, Research with Purpose",
@@ -80,16 +80,19 @@ export const siteContent = {
         title: "Reception, Registration & Billing",
         info: "Streamlined patient registration and billing services",
         image: "/images/service-1.png",
+        icon: "clipboard"
       },
       {
         title: "Information Desk",
         info: "Complete guidance and support for all your queries",
         image: "/images/service-2.png",
+        icon: "info"
       },
       {
         title: "Consultation Services",
         info: "Expert consultations across multiple Ayurvedic specialties",
         image: "/images/service-3.png",
+        icon: "stethoscope",
         items: [
           "Ayurveda General Practice",
           "Panchakarma Therapy",
@@ -103,6 +106,7 @@ export const siteContent = {
         title: "Supraja – Fertility & Wellness",
         info: "Comprehensive reproductive health and wellness services",
         image: "/images/service-4.png",
+        icon: "heart",
         items: [
           "Male & Female Infertility Consultation",
           "Couple Counselling",
@@ -118,21 +122,25 @@ export const siteContent = {
         title: "Madhava – Diagnostic Laboratory",
         info: "Modern diagnostic services with accurate results",
         image: "/images/service-5.png",
+        icon: "flask"
       },
       {
         title: "Bheshaja – Ayurveda Pharmacy",
         info: "Authentic Ayurvedic medicines and preparations",
         image: "/images/service-6.png",
+        icon: "capsule"
       },
       {
         title: "Niramaya – Panchakarma Therapy",
         info: "Traditional detoxification and rejuvenation treatments",
         image: "/images/service-7.png",
+        icon: "water"
       },
       {
         title: "Ananda – Retiring & Observation Room",
         info: "Comfortable resting facilities for patient care",
-        image: "/images/service-8.png",
+        image: "/images/service-3.png",
+        icon: "bed"
       }
     ],
     banner: {
@@ -148,25 +156,30 @@ export const siteContent = {
     },
     subtitle: "We specialize in treating a wide range of health conditions with authentic Ayurvedic therapies",
     list: [
-      { name: "PCOS - Polycystic Ovarian Syndrome", icon: "heart", color: "#e6f4f1" },
-      { name: "Infertility - Male & Female", icon: "smile", color: "#fff5f5" },
-      { name: "Obesity - Weight Management", icon: "scale", color: "#fffbeb" },
-      { name: "Skin Care & Beauty Treatments", icon: "sparkles", color: "#fdf2f8" },
-      { name: "Diabetes Mellitus", icon: "activity", color: "#f0f9ff" },
-      { name: "Piles (Hemorrhoids)", icon: "target", color: "#fff1f2" },
-      { name: "Fissure & Fistula", icon: "circle", color: "#fff7ed" },
-      { name: "IBS - Irritable Bowel Syndrome", icon: "wind", color: "#eef2ff" },
-      { name: "Arthritis & Joint Pain", icon: "bone", color: "#f0fdf4" },
-      { name: "Spondylosis - Cervical & Lumbar", icon: "bone", color: "#ecfeff" },
-      { name: "Migraine & Headaches", icon: "brain", color: "#f5f3ff" },
-      { name: "Sinusitis & Respiratory Issues", icon: "wind", color: "#eff6ff" },
-      { name: "Stress & Anxiety Management", icon: "smile", color: "#faf5ff" },
-      { name: "Gastritis & Acidity", icon: "zap", color: "#f7fee7" },
-      { name: "Psoriasis & Eczema", icon: "sparkles", color: "#fff1f2" },
-      { name: "Hair Fall & Premature Greying", icon: "star", color: "#fffbeb" },
-      { name: "General Weakness & Fatigue", icon: "battery", color: "#f0fdf4" },
-      { name: "Eye Disorders", icon: "eye", color: "#eff6ff" },
-    ]
+      { title: "PCOS - Polycystic Ovarian Syndrome", icon: "heart-pulse", theme: "green" },
+      { title: "Infertility - Male & Female", icon: "baby", theme: "red" },
+      { title: "Obesity - Weight Management", icon: "scale", theme: "orange" },
+      { title: "Skin Care & Beauty Treatments", icon: "sparkles", theme: "pink" },
+      { title: "Diabetes Mellitus", icon: "activity", theme: "blue" },
+      { title: "Piles (Hemorrhoids)", icon: "circle-dot", theme: "red" },
+      { title: "Fissure & Fistula", icon: "circle-dot", theme: "orange" },
+      { title: "IBS - Irritable Bowel Syndrome", icon: "activity", theme: "blue" },
+      { title: "Arthritis & Joint Pain", icon: "bone", theme: "green" },
+      { title: "Spondylosis - Cervical & Lumbar", icon: "bone", theme: "cyan" },
+      { title: "Migraine & Headaches", icon: "brain", theme: "purple" },
+      { title: "Sinusitis & Respiratory Issues", icon: "wind", theme: "blue" },
+      { title: "Stress & Anxiety Management", icon: "brain", theme: "purple" },
+      { title: "Gastritis & Acidity", icon: "activity", theme: "lime" },
+      { title: "Psoriasis & Eczema", icon: "sparkles", theme: "purple" },
+      { title: "Hair Fall & Premature Greying", icon: "star", theme: "orange" },
+      { title: "General Weakness & Fatigue", icon: "heart-pulse", theme: "green" },
+      { title: "Eye Disorders", icon: "eye", theme: "blue" }
+    ],
+    holisticBanner: {
+      title: "Holistic Approach to Healing",
+      description: "Our treatments focus on addressing the root cause, not just symptoms. We combine traditional Panchakarma therapies, herbal medicines, dietary modifications, and lifestyle counseling for comprehensive healing.",
+      points: ["Personalized Treatment Plans", "Evidence-Based Protocols", "Expert Ayurvedic Physicians", "Natural & Safe"]
+    }
   },
   physicians: {
     title: {
@@ -185,12 +198,11 @@ export const siteContent = {
       },
       {
         name: "Dr. Pramod Katti",
-        title: "Dr. Pramod Katti",
-        title2: "BAMS, MD (Ayurveda)",
+        title: "BAMS, MD (Ayurveda)",
         role: "Senior Consultant",
         experience: "20+ Years Experience",
         expertise: ["Shalya Tantra", "Research", "Clinical Practice"],
-        image: "/images/home.avif"
+        image: "/images/doctor-2.png"
       }
     ],
     features: [
@@ -215,76 +227,23 @@ export const siteContent = {
     ]
   },
   whyUs: {
-    title: {
-      black: "Why Choose",
-      green: "Sankalpa?",
-    },
+    title: { black: "Why Choose", green: "Sankalpa?" },
     subtitle: "We blend the timeless wisdom of Ayurveda with cutting-edge research and compassionate care. Choosing us means choosing a journey of healing that is authentic, personalised, and holistic.",
     list: [
-      {
-        title: "9 Decades of Excellence",
-        info: "Ayurveda practitioner for 9 decades and 3 generations. Promising and proven result-oriented treatments.",
-        icon: "history",
-        color: "#065f46"
-      },
-      {
-        title: "Authentic Ayurveda",
-        info: "Treatments rooted in traditional and classical Ayurveda, practised with integrity. Served more than 10 Lakh patients from across the globe.",
-        icon: "shield",
-        color: "#1d4ed8"
-      },
-      {
-        title: "Research-Driven Excellence",
-        info: "Evidence-based protocols integrating traditional wisdom with modern validation.",
-        icon: "beaker",
-        color: "#7e22ce"
-      },
-      {
-        title: "Personalised Care",
-        info: "Customised therapies to your Prakriti (constitution) and health needs. Yoga, diet, and Nutrition, Infertility, and couples counselling.",
-        icon: "heart",
-        color: "#be185d"
-      },
-      {
-        title: "Comprehensive Healing",
-        info: "Not just symptom relief, but restoration of balance in body, mind, and spirit. Less invasive, painless, harmless, and affordable treatments.",
-        icon: "leaf",
-        color: "#15803d"
-      },
-      {
-        title: "Expert Team",
-        info: "Experienced Ayurvedic physicians, researchers, and therapists working in synergy.",
-        icon: "users",
-        color: "#c2410c"
-      },
-      {
-        title: "State-of-the-Art Facilities",
-        info: "Modern infrastructure supporting traditional Panchakarma, Reproductive and Regenerative medicines, wellness, and integrative therapies.",
-        icon: "building",
-        color: "#4338ca"
-      },
-      {
-        title: "Eco-Conscious & Ethical",
-        info: "Sustainable practices, ethical sourcing of medicines, and community-centred healthcare.",
-        icon: "leaf",
-        color: "#059669"
-      },
-      {
-        title: "Education & Awareness",
-        info: "Empowering patients with lifestyle guidance, yoga, meditation, and mindful living.",
-        icon: "graduation-cap",
-        color: "#0891b2"
-      },
-      {
-        title: "Global Outlook, Indian Soul",
-        info: "A vision that connects Ayurveda with international research while staying true to its roots.",
-        icon: "globe",
-        color: "#6d28d9"
-      }
+      { title: "9 Decades of Excellence", info: "Ayurveda practitioner for 9 decades and 3 generations. Promising and proven result-oriented treatments.", icon: "history", color: "#10b981" },
+      { title: "Authentic Ayurveda", info: "Treatments rooted in traditional and classical Ayurveda, practised with integrity. Served more than 10 Lakh patients from across the globe.", icon: "shield", color: "#2563eb" },
+      { title: "Research-Driven Excellence", info: "Evidence-based protocols integrating traditional wisdom with modern validation.", icon: "flask", color: "#a855f7" },
+      { title: "Personalised Care", info: "Customised therapies to your Prakriti (constitution) and health needs. Yoga, diet, and Nutrition, Infertility, and couples counselling.", icon: "heart", color: "#ef4444" },
+      { title: "Comprehensive Healing", info: "Not just symptom relief, but restoration of balance in body, mind, and spirit. Less invasive, painless, harmless, and affordable treatments.", icon: "leaf", color: "#10b981" },
+      { title: "Expert Team", info: "Experienced Ayurvedic physicians, researchers, and therapists working in synergy.", icon: "users", color: "#f59e0b" },
+      { title: "State-of-the-Art Facilities", info: "Modern infrastructure supporting traditional Panchakarma, Reproductive and Regenerative medicines, wellness, and integrative therapies.", icon: "building", color: "#4f46e5" },
+      { title: "Eco-Conscious & Ethical", info: "Sustainable practices, ethical sourcing of medicines, and community-centred healthcare.", icon: "leaf", color: "#10b981" },
+      { title: "Education & Awareness", info: "Empowering patients with lifestyle guidance, yoga, meditation, and mindful living.", icon: "graduation-cap", color: "#06b6d4" },
+      { title: "Global Outlook, Indian Soul", info: "A vision that connects Ayurveda with international research while staying true to its roots.", icon: "globe", color: "#7c3aed" }
     ],
     banner: {
       title: "Not Just Treatment, But Transformation",
-      tagline: "Choose Sankalpa – Where Tradition Heals, and Research Reveals.",
+      tagline: "Choose Sankalpa – Where Tradition Heals, and Research Reveals",
       buttons: [
         { label: "Book Your Appointment", href: "#footer" },
         { label: "Explore Services", href: "#services" }
@@ -292,38 +251,14 @@ export const siteContent = {
     }
   },
   values: {
-    title: {
-      black: "Our",
-      green: "Values",
-    },
+    title: { black: "Our", green: "Values" },
     subtitle: "The principles that guide everything we do",
     list: [
-      {
-        title: "Care with Compassion",
-        info: "Every patient is treated with empathy, respect, and personalized attention.",
-        color: "#ec4899"
-      },
-      {
-        title: "Research with Innovation",
-        info: "Continuously advancing Ayurveda through evidence-based research and modern science.",
-        color: "#f59e0b"
-      },
-      {
-        title: "Healing with Integrity",
-        info: "Ethical, authentic, and quality Ayurveda services rooted in traditional wisdom.",
-        color: "#10b981"
-      },
-      {
-        title: "Passion & Commitment",
-        info: "Dedicated to Ayurveda excellence and unwavering commitment to patient well-being.",
-        color: "#f43f5e"
-      }
-    ],
-    commitment: {
-      title: "Our Core Commitment",
-      highlight: "Healing with Integrity, Research with Innovation, Care with Compassion.",
-      text: "We are committed to providing ethical, scientific, and quality Ayurveda services with an unwavering passion for excellence in everything we do."
-    }
+      { title: "Care with Compassion", info: "Every patient is treated with empathy, respect, and personalized attention.", color: "#f43f5e", icon: "heart" },
+      { title: "Research with Innovation", info: "Continuously advancing Ayurveda through evidence-based research and modern science.", color: "#f59e0b", icon: "lightbulb" },
+      { title: "Healing with Integrity", info: "Ethical, authentic, and quality Ayurveda services rooted in traditional wisdom.", color: "#10b981", icon: "shield-check" },
+      { title: "Passion & Commitment", info: "Dedicated to Ayurveda excellence and unwavering commitment to patient well-being.", color: "#f97316", icon: "flame" }
+    ]
   },
   footer: {
     description: "Where ancient Ayurvedic wisdom meets modern research, nurturing health, harmony, and hope for humanity.",

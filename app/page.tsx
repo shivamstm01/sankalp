@@ -12,8 +12,10 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Topbar />
-      <Navbar />
+      <header className="fixed top-0 left-0 w-full z-[1000] shadow-sm">
+        <Topbar />
+        <Navbar />
+      </header>
       <main>
         <Hero />
         <About />

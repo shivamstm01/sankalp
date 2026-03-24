@@ -1,100 +1,114 @@
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
 
-const getServiceIcon = (title: string) => {
-  if (title.includes("Reception")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
-  if (title.includes("Information")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>;
-  if (title.includes("Consultation")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>;
-  if (title.includes("Supraja")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>;
-  if (title.includes("Laboratory")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3v12"/><path d="M18 3v12"/><path d="M3 15h18"/><path d="M3 3h18"/><path d="M12 15v6"/><path d="M8 21h8"/></svg>;
-  if (title.includes("Pharmacy")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.5 22a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/><path d="M15 7h3l3 3v10a2 2 0 0 1-2 2h-4"/><path d="M15 7v15"/><path d="M10.5 11v6"/><path d="M7.5 14h6"/></svg>;
-  if (title.includes("Panchakarma")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>;
-  if (title.includes("Retiring")) return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>;
-  return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg>;
-};
-
 export default function Services() {
   const { title, subtitle, list, banner } = siteContent.services;
 
   return (
-    <section id="services" className="bg-slate-50 py-20 px-4">
+    <section id="services" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        
+        {/* Section Heading (Figma Exact) */}
+        <div className="text-center mb-16 lg:mb-20">
+          <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#008a5e] rounded-full"></span>
+              <span className="absolute -bottom-3 left-0 w-full h-1.5 bg-[#008a5e] rounded-full"></span>
             </span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg font-medium">
+          <p className="text-gray-500 max-w-2xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
             {subtitle}
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8 mb-20 lg:mb-28">
           {list.map((service, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,138,94,0.1)] transition-all group flex flex-col h-full border border-gray-100/50"
-            >
-              {/* Image Container */}
-              <div className="relative h-56 w-full overflow-hidden bg-gray-100">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-0"></div>
-                {/* Fallback pattern */}
-                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style={{backgroundImage: `url(${service.image})`}}></div>
-                
-                {/* Floating Icon */}
-                <div className="absolute -bottom-7 left-8 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center text-[#008a5e] z-10 border border-[#e6f4f1]">
-                   {getServiceIcon(service.title)}
-                </div>
+            <div key={idx} className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-gray-100 flex flex-col h-full group">
+              
+              {/* Card Image */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                 <Image 
+                   src={service.image} 
+                   alt={service.title} 
+                   fill 
+                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                 />
+                 <div className="absolute inset-0 bg-black/5"></div>
               </div>
 
-              {/* Content */}
-              <div className="p-8 pb-10 pt-12 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 group-hover:text-[#008a5e] transition-colors leading-tight">
-                  {service.title}
-                </h3>
-                <p className="text-gray-500 text-base leading-relaxed mb-6 flex-1">
-                  {service.info}
-                </p>
+              {/* Card Content Area */}
+              <div className="p-8 pt-12 relative flex-1 flex flex-col">
+                 
+                 {/* Floating Icon (Figma Exact Position) */}
+                 <div className="absolute -top-8 left-8 w-[60px] h-[60px] bg-white rounded-full border-[2.5px] border-[#008a5e] flex items-center justify-center text-[#008a5e] shadow-xl group-hover:bg-[#008a5e] group-hover:text-white transition-all duration-300">
+                    <div className="scale-110">
+                       {/* Icon mapping based on identifier */}
+                       {service.icon === 'clipboard' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>}
+                       {service.icon === 'info' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>}
+                       {service.icon === 'stethoscope' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2.8l-.2-.5z"/><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7"/><path d="M12 14v7"/></svg>}
+                       {service.icon === 'heart' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>}
+                       {service.icon === 'flask' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M10 2v7.5M14 2v7.5M8.5 2h7M7 22h10M9 12l-5 10M15 12l5 10"/></svg>}
+                       {service.icon === 'capsule' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>}
+                       {service.icon === 'water' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5s-3 3.5-3 5.5a7 7 0 0 0 7 7Z"/></svg>}
+                       {service.icon === 'bed' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v0"/></svg>}
+                    </div>
+                 </div>
 
-                {service.items && (
-                  <ul className="mb-8 space-y-3 bg-[#f8fafc] p-5 rounded-2xl border border-gray-50">
-                    {service.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600 font-medium">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008a5e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                 <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a] mb-4 leading-tight group-hover:text-[#008a5e] transition-colors">
+                    {service.title}
+                 </h3>
+                 <p className="text-gray-500 text-sm lg:text-[15px] font-medium mb-6 leading-relaxed">
+                   {service.info}
+                 </p>
 
-                <button className="flex items-center gap-2 text-[#008a5e] font-bold text-base group/btn mt-auto hover:gap-3 transition-all">
-                   Explore More
-                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:translate-x-1 transition-transform"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-                </button>
+                 {service.items && (
+                   <div className="mt-auto space-y-3.5 pt-6 border-t border-gray-100/50">
+                      {service.items.map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                           <span className="text-[#008a5e] mt-1 shrink-0">
+                              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                           </span>
+                           <span className="text-xs lg:text-[14px] font-bold text-gray-400/80 leading-relaxed uppercase tracking-wider">{item}</span>
+                        </div>
+                      ))}
+                   </div>
+                 )}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Sannati Banner */}
-        <div className="bg-[#008a5e] rounded-[2.5rem] p-10 md:p-16 text-white text-center shadow-2xl relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#e6f4f1] opacity-10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-           
+        {/* Sannati Wellness Banner - Figma Masterpiece */}
+        <div className="bg-[#008a5e] p-10 lg:p-16 rounded-[2.5rem] lg:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden text-center mx-auto w-full lg:max-w-6xl">
            <div className="relative z-10 flex flex-col items-center gap-6">
-              <div className="text-yellow-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              {/* Sparkle Icon */}
+              <div className="mb-2">
+                 <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 4L18.5 13.5L28 16L18.5 18.5L16 28L13.5 18.5L4 16L13.5 13.5L16 4Z" fill="#facc15" />
+                    <circle cx="24" cy="8" r="1.5" fill="#facc15" />
+                    <circle cx="8" cy="24" r="1" fill="#facc15" />
+                    <circle cx="28" cy="22" r="1.2" fill="#facc15" />
+                 </svg>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold">{banner.title}</h3>
-              <p className="text-xl md:text-2xl font-medium text-[#e6f4f1]">{banner.tagline}</p>
-              <p className="text-[#e6f4f1] opacity-90 max-w-2xl">{banner.description}</p>
+              
+              <div className="space-y-6">
+                 <h4 className="text-3xl lg:text-[44px] font-black tracking-tight leading-tight">
+                    Sannati Fertility and Wellness Centre
+                 </h4>
+                 <div className="space-y-4">
+                    <p className="text-[#e6f4f1] text-lg lg:text-[22px] font-bold italic opacity-95">
+                      Making every couple's dream come true with healthy progeny – 'SUPRAJA'
+                    </p>
+                    <p className="text-white/80 text-base lg:text-[18px] font-medium max-w-2xl mx-auto leading-relaxed">
+                      Leading with innovation, integrity and empathy in reproductive health
+                    </p>
+                 </div>
+              </div>
            </div>
         </div>
+
       </div>
     </section>
   );

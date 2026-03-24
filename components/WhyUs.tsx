@@ -1,68 +1,81 @@
 import { siteContent } from "@/data/siteContent";
 
+const IconMap: Record<string, React.ReactNode> = {
+  history: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>,
+  shield: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg>,
+  flask: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12"/><path d="M8 3v10.5a7 7 0 1 0 8 0V3"/><path d="M6 14h12"/></svg>,
+  heart: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>,
+  leaf: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>,
+  users: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+  building: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>,
+  "graduation-cap": <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+  globe: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+};
+
 export default function WhyUs() {
   const { title, subtitle, list, banner } = siteContent.whyUs;
 
   return (
-    <section id="whyus" className="bg-white py-20 px-4">
+    <section id="whyus" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
+        
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-16 lg:mb-24">
+          <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#008a5e] rounded-full"></span>
+              <span className="absolute -bottom-3 left-0 w-full h-1.5 bg-[#008a5e] rounded-full"></span>
             </span>
           </h2>
-          <p className="text-gray-500 max-w-3xl mx-auto text-lg font-medium leading-relaxed">
+          <p className="text-gray-500 max-w-3xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
             {subtitle}
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {list.map((feature, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white p-10 rounded-[2.5rem] shadow-[0_4px_25px_rgba(0,0,0,0.02)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all group"
-            >
-              <div 
-                style={{ backgroundColor: feature.color }}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg"
-              >
-                 {/* Icon mapping */}
-                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-4 group-hover:text-[#008a5e] transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {feature.info}
-              </p>
+        {/* WhyUs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 lg:mb-32">
+          {list.map((item, idx) => (
+            <div key={idx} className="bg-white p-10 lg:p-12 rounded-[2rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col gap-6 group hover:-translate-y-2 transition-all duration-500">
+               <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform`} style={{ backgroundColor: item.color }}>
+                  {IconMap[item.icon] || <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>}
+               </div>
+               <div className="space-y-4">
+                  <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a]">{item.title}</h3>
+                  <p className="text-gray-500 text-sm lg:text-[15px] font-medium leading-relaxed">
+                    {item.info}
+                  </p>
+               </div>
             </div>
           ))}
         </div>
 
-        {/* Banner */}
-        <div className="bg-[#008a5e] rounded-[3rem] p-12 md:p-20 text-white text-center shadow-2xl relative overflow-hidden">
-           {/* Decorative elements */}
-           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent)] flex-1"></div>
-           
-           <div className="relative z-10">
-              <h3 className="text-4xl md:text-5xl font-bold mb-6">{banner.title}</h3>
-              <p className="text-xl md:text-2xl font-medium text-[#e6f4f1] mb-12 opacity-90">{banner.tagline}</p>
+        {/* Transformation Banner (Figma Masterpiece) */}
+        <div className="bg-[#008a5e] p-12 lg:p-24 rounded-[3rem] text-white shadow-2xl relative overflow-hidden text-center">
+           <div className="relative z-10 space-y-12">
+              <div className="space-y-4">
+                 <h4 className="text-4xl lg:text-[64px] font-black tracking-tighter leading-tight">
+                    {banner.title}
+                 </h4>
+                 <p className="text-white/90 text-lg lg:text-[24px] font-medium">
+                    {banner.tagline}
+                 </p>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <button className="bg-white text-[#008a5e] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#e6f4f1] transition-all shadow-lg">
-                    {banner.buttons[0].label}
-                 </button>
-                 <button className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
-                    {banner.buttons[1].label}
-                 </button>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                 {banner.buttons.map((btn, idx) => (
+                    <a 
+                      key={idx}
+                      href={btn.href}
+                      className="bg-white text-[#008a5e] px-10 lg:px-14 py-4 lg:py-5 rounded-full font-black text-lg lg:text-[20px] shadow-xl hover:bg-gray-50 hover:-translate-y-1 transition-all active:scale-95"
+                    >
+                       {btn.label}
+                    </a>
+                 ))}
               </div>
            </div>
         </div>
+
       </div>
     </section>
   );
