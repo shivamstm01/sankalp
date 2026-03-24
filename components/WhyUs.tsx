@@ -1,4 +1,6 @@
+"use client";
 import { siteContent } from "@/data/siteContent";
+import { motion } from "framer-motion";
 
 const IconMap: Record<string, React.ReactNode> = {
   history: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>,
@@ -16,11 +18,16 @@ export default function WhyUs() {
   const { title, subtitle, list, banner } = siteContent.whyUs;
 
   return (
-    <section id="whyus" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8">
+    <section id="whyus" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Heading */}
-        <div className="text-center mb-16 lg:mb-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 lg:mb-24"
+        >
           <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
@@ -31,50 +38,93 @@ export default function WhyUs() {
           <p className="text-gray-500 max-w-3xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
             {subtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* WhyUs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 lg:mb-32">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 lg:mb-32"
+        >
           {list.map((item, idx) => (
-            <div key={idx} className="bg-white p-10 lg:p-12 rounded-[2rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col gap-6 group hover:-translate-y-2 transition-all duration-500">
-               <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform`} style={{ backgroundColor: item.color }}>
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="bg-white p-10 lg:p-12 rounded-[2rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col gap-6 group transition-all duration-500"
+            >
+               <motion.div 
+                 whileHover={{ rotate: 10, scale: 1.1 }}
+                 className="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-xl" 
+                 style={{ backgroundColor: item.color }}
+               >
                   {IconMap[item.icon] || <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>}
-               </div>
+               </motion.div>
                <div className="space-y-4">
-                  <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a]">{item.title}</h3>
+                  <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a] transition-colors group-hover:text-[#008a5e]">{item.title}</h3>
                   <p className="text-gray-500 text-sm lg:text-[15px] font-medium leading-relaxed">
                     {item.info}
                   </p>
                </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Transformation Banner (Figma Masterpiece) */}
-        <div className="bg-[#008a5e] p-12 lg:p-24 rounded-[3rem] text-white shadow-2xl relative overflow-hidden text-center">
+        {/* Transformation Banner (Animated) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#008a5e] p-12 lg:p-24 rounded-[3rem] text-white shadow-2xl relative overflow-hidden text-center group"
+        >
            <div className="relative z-10 space-y-12">
               <div className="space-y-4">
-                 <h4 className="text-4xl lg:text-[64px] font-black tracking-tighter leading-tight">
+                 <motion.h4 
+                   initial={{ opacity: 0, y: 20 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true }}
+                   transition={{ delay: 0.2 }}
+                   className="text-4xl lg:text-[64px] font-black tracking-tighter leading-tight"
+                 >
                     {banner.title}
-                 </h4>
-                 <p className="text-white/90 text-lg lg:text-[24px] font-medium">
+                 </motion.h4>
+                 <motion.p 
+                   initial={{ opacity: 0, y: 15 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true }}
+                   transition={{ delay: 0.4 }}
+                   className="text-white/90 text-lg lg:text-[24px] font-medium"
+                 >
                     {banner.tagline}
-                 </p>
+                 </motion.p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-6 justify-center"
+              >
                  {banner.buttons.map((btn, idx) => (
-                    <a 
+                    <motion.a 
                       key={idx}
                       href={btn.href}
-                      className="bg-white text-[#008a5e] px-10 lg:px-14 py-4 lg:py-5 rounded-full font-black text-lg lg:text-[20px] shadow-xl hover:bg-gray-50 hover:-translate-y-1 transition-all active:scale-95"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-white text-[#008a5e] px-10 lg:px-14 py-4 lg:py-5 rounded-full font-black text-lg lg:text-[20px] shadow-xl hover:bg-gray-50 transition-all"
                     >
                        {btn.label}
-                    </a>
+                    </motion.a>
                  ))}
-              </div>
+              </motion.div>
            </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -12,11 +12,7 @@ export const siteContent = {
     { label: "Why Us", href: "#whyus" },
   ],
   hero: {
-    badge: "9 Decades of Ayurvedic Excellence",
-    title: {
-      black: "Your Sankalpa",
-      green: "Our Ayurveda",
-    },
+    title: { black: "Your Sankalpa,", green: "Our Ayurveda" },
     subheading: "Healing with Wisdom, Research with Purpose",
     description: "Where ancient Ayurvedic wisdom meets modern research, nurturing health, harmony, and hope for humanity.",
     buttons: [
@@ -27,13 +23,13 @@ export const siteContent = {
     motto: {
       label: "Our Motto",
       text: "\"Heal in Sankalpa and Heal by Sankalpa\""
-    }
+    },
+    stats: [
+      { label: "Patients Treated", value: "10L+" },
+      { label: "Years Legacy", value: "90+" },
+      { label: "Generations", value: "3" },
+    ]
   },
-  stats: [
-    { label: "Patients Treated", value: "10L+" },
-    { label: "Years Legacy", value: "90+" },
-    { label: "Generations", value: "3" },
-  ],
   about: {
     title: {
       black: "About",

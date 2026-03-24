@@ -1,4 +1,6 @@
+"use client";
 import { siteContent } from "@/data/siteContent";
+import { motion } from "framer-motion";
 
 const themeStyles: Record<string, string> = {
   green: "bg-[#f0fdf4] border-[#dcfce7] text-[#15803d]",
@@ -29,14 +31,19 @@ const IconMap: Record<string, React.ReactNode> = {
 export default function Treatments() {
   const { title, subtitle, list, holisticBanner } = siteContent.treatments;
 
-  if (!holisticBanner) return null; // Safety guard
+  if (!holisticBanner) return null;
 
   return (
-    <section id="treatments" className="py-20 lg:py-32 px-4 md:px-8 bg-white">
+    <section id="treatments" className="py-20 lg:py-32 px-4 md:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Heading */}
-        <div className="text-center mb-16 lg:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 lg:mb-20"
+        >
           <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
@@ -47,34 +54,57 @@ export default function Treatments() {
           <p className="text-gray-500 max-w-2xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
             {subtitle}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Treatments Grid (Figma Exact Grid) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 lg:mb-36">
+        {/* Treatments Grid */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.05 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 lg:mb-36"
+        >
           {list.map((item, idx) => {
             const style = themeStyles[item.theme || 'green'] || themeStyles.green;
             return (
-              <div key={idx} className={`${style} border-2 p-8 lg:p-10 rounded-[2rem] shadow-sm flex flex-col items-start gap-6 hover:shadow-md transition-all group min-h-[160px] lg:min-h-[180px]`}>
-                <div className="opacity-90 group-hover:scale-110 transition-all duration-300">
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className={`${style} border-2 p-8 lg:p-10 rounded-[2rem] shadow-sm flex flex-col items-start gap-6 transition-all group min-h-[160px] lg:min-h-[180px]`}
+              >
+                <div className="opacity-90 group-hover:rotate-12 transition-transform duration-300">
                    {IconMap[item.icon] || <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/></svg>}
                 </div>
                 <h3 className="text-lg lg:text-xl font-black leading-tight tracking-tight">
                    {item.title}
                 </h3>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        {/* Holistic Approach Banner (Figma Masterpiece) */}
-        <div className="bg-[#f8fcf0] p-10 lg:p-24 rounded-[3rem] lg:rounded-[4.5rem] border border-[#e1f1d1] shadow-xl relative overflow-hidden">
+        {/* Holistic Approach Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#f8fcf0] p-10 lg:p-24 rounded-[3rem] lg:rounded-[4.5rem] border border-[#e1f1d1] shadow-xl relative overflow-hidden"
+        >
            {/* Center Icon */}
            <div className="flex justify-center mb-10">
-              <div className="bg-white w-20 h-20 lg:w-24 lg:h-24 rounded-full shadow-2xl border-[3px] border-[#008a5e] flex items-center justify-center">
-                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#008a5e" strokeWidth="2.5">
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="bg-white w-20 h-20 lg:w-24 lg:h-24 rounded-full shadow-2xl border-[3px] border-[#008a5e] flex items-center justify-center text-[#008a5e]"
+              >
+                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>
                  </svg>
-              </div>
+              </motion.div>
            </div>
 
            <div className="text-center max-w-5xl mx-auto">
@@ -85,19 +115,26 @@ export default function Treatments() {
                 {holisticBanner.description}
               </p>
 
-              {/* Benefits List (Figma Exact) */}
+              {/* Benefits List */}
               <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
                  {holisticBanner.points.map((point, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-[#e1f1d1] shadow-sm">
+                    <motion.div 
+                      key={i} 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-center gap-3 bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-[#e1f1d1] shadow-sm"
+                    >
                        <span className="text-[#008a5e]">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                        </span>
                        <span className="text-[#1a1a1a] font-black text-sm lg:text-[18px] whitespace-nowrap">{point}</span>
-                    </div>
+                    </motion.div>
                  ))}
               </div>
            </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

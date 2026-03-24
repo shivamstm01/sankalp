@@ -1,15 +1,35 @@
+"use client";
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { motion } from "framer-motion";
 
 export default function Services() {
-  const { title, subtitle, list, banner } = siteContent.services;
+  const { title, subtitle, list } = siteContent.services;
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
 
   return (
-    <section id="services" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8">
+    <section id="services" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Heading (Figma Exact) */}
-        <div className="text-center mb-16 lg:mb-20">
+        {/* Section Heading */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 lg:mb-20"
+        >
           <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
@@ -20,31 +40,42 @@ export default function Services() {
           <p className="text-gray-500 max-w-2xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
             {subtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8 mb-20 lg:mb-28">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 lg:mb-28"
+        >
           {list.map((service, idx) => (
-            <div key={idx} className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-gray-100 flex flex-col h-full group">
-              
+            <motion.div 
+              key={idx} 
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col h-full group"
+            >
               {/* Card Image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                  <Image 
                    src={service.image} 
                    alt={service.title} 
                    fill 
-                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                   className="object-cover group-hover:scale-110 transition-transform duration-1000"
                  />
-                 <div className="absolute inset-0 bg-black/5"></div>
+                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
               </div>
 
               {/* Card Content Area */}
               <div className="p-8 pt-12 relative flex-1 flex flex-col">
-                 
-                 {/* Floating Icon (Figma Exact Position) */}
-                 <div className="absolute -top-8 left-8 w-[60px] h-[60px] bg-white rounded-full border-[2.5px] border-[#008a5e] flex items-center justify-center text-[#008a5e] shadow-xl group-hover:bg-[#008a5e] group-hover:text-white transition-all duration-300">
+                 {/* Floating Icon */}
+                 <motion.div 
+                    whileHover={{ rotate: 15 }}
+                    className="absolute -top-8 left-8 w-[60px] h-[60px] bg-white rounded-full border-[2.5px] border-[#008a5e] flex items-center justify-center text-[#008a5e] shadow-xl group-hover:bg-[#008a5e] group-hover:text-white transition-all duration-300"
+                 >
                     <div className="scale-110">
-                       {/* Icon mapping based on identifier */}
                        {service.icon === 'clipboard' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>}
                        {service.icon === 'info' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>}
                        {service.icon === 'stethoscope' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2.8l-.2-.5z"/><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7"/><path d="M12 14v7"/></svg>}
@@ -54,7 +85,7 @@ export default function Services() {
                        {service.icon === 'water' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5s-3 3.5-3 5.5a7 7 0 0 0 7 7Z"/></svg>}
                        {service.icon === 'bed' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v0"/></svg>}
                     </div>
-                 </div>
+                 </motion.div>
 
                  <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a] mb-4 leading-tight group-hover:text-[#008a5e] transition-colors">
                     {service.title}
@@ -76,22 +107,31 @@ export default function Services() {
                    </div>
                  )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Sannati Wellness Banner - Figma Masterpiece */}
-        <div className="bg-[#008a5e] p-10 lg:p-16 rounded-[2.5rem] lg:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden text-center mx-auto w-full lg:max-w-6xl">
+        {/* Sannati Wellness Banner */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#008a5e] p-10 lg:p-16 rounded-[2.5rem] lg:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden text-center mx-auto w-full lg:max-w-6xl"
+        >
            <div className="relative z-10 flex flex-col items-center gap-6">
-              {/* Sparkle Icon */}
-              <div className="mb-2">
+              <motion.div 
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="mb-2"
+              >
                  <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 4L18.5 13.5L28 16L18.5 18.5L16 28L13.5 18.5L4 16L13.5 13.5L16 4Z" fill="#facc15" />
                     <circle cx="24" cy="8" r="1.5" fill="#facc15" />
                     <circle cx="8" cy="24" r="1" fill="#facc15" />
                     <circle cx="28" cy="22" r="1.2" fill="#facc15" />
                  </svg>
-              </div>
+              </motion.div>
               
               <div className="space-y-6">
                  <h4 className="text-3xl lg:text-[44px] font-black tracking-tight leading-tight">
@@ -107,7 +147,7 @@ export default function Services() {
                  </div>
               </div>
            </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
