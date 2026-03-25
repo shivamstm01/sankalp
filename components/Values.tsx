@@ -13,24 +13,24 @@ export default function Values() {
   const { title, subtitle, list } = siteContent.values;
 
   return (
-    <section id="values" className="py-20 lg:py-32 px-4 md:px-8 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="values" className="py-16 lg:py-24 px-4 md:px-8 bg-white overflow-hidden">
+      <div className="max-w-[1560px] mx-auto">
         
         {/* Section Heading */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 lg:mb-24"
+          className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-[46px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
-              <span className="absolute -bottom-3 left-0 w-full h-1.5 bg-[#008a5e] rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#008a5e] rounded-full"></span>
             </span>
           </h2>
-          <p className="text-gray-500 max-w-3xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
+          <p className="text-gray-500 max-w-3xl mx-auto text-sm lg:text-base font-medium mt-6 leading-relaxed">
             {subtitle}
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export default function Values() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.15 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {list.map((item, idx) => (
             <motion.div 
@@ -49,8 +49,8 @@ export default function Values() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
-              className="p-10 lg:p-12 rounded-[2rem] text-white flex flex-col gap-8 transition-all duration-500 shadow-xl"
+              whileHover={{ scale: 1.03, y: -8, filter: "brightness(1.06)" }}
+              className="p-6 lg:p-8 rounded-[1.5rem] text-white flex flex-col gap-5 transition-all duration-500 shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
               style={{ backgroundColor: item.color }}
             >
                <motion.div 
@@ -60,11 +60,11 @@ export default function Values() {
                >
                   {IconMap[item.icon as string] || <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2v20m-10-10h20"/></svg>}
                </motion.div>
-               <div className="space-y-4">
-                  <h3 className="text-2xl lg:text-3xl font-black leading-tight">
+               <div className="space-y-3">
+                  <h3 className="text-xl lg:text-2xl font-black leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-white/90 text-sm lg:text-[16px] font-medium leading-relaxed">
+                  <p className="text-white/90 text-sm font-medium leading-relaxed">
                     {item.info}
                   </p>
                </div>

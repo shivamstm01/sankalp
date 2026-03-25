@@ -19,7 +19,7 @@ export const siteContent = {
       { label: "Book Appointment", href: "#footer", variant: "primary" },
       { label: "Our Services", href: "#services", variant: "outline" },
     ],
-    image: "/images/doctor.png",
+    image: "/images/drimage.jpeg",
     motto: {
       label: "Our Motto",
       text: "\"Heal in Sankalpa and Heal by Sankalpa\""
@@ -75,19 +75,19 @@ export const siteContent = {
       {
         title: "Reception, Registration & Billing",
         info: "Streamlined patient registration and billing services",
-        image: "/images/service-1.png",
+        image: "/images/Reception.jpg",
         icon: "clipboard"
       },
       {
         title: "Information Desk",
         info: "Complete guidance and support for all your queries",
-        image: "/images/service-2.png",
+        image: "/images/Information.jpg",
         icon: "info"
       },
       {
         title: "Consultation Services",
         info: "Expert consultations across multiple Ayurvedic specialties",
-        image: "/images/service-3.png",
+        image: "/images/Consultation.jpg",
         icon: "stethoscope",
         items: [
           "Ayurveda General Practice",
@@ -101,7 +101,7 @@ export const siteContent = {
       {
         title: "Supraja – Fertility & Wellness",
         info: "Comprehensive reproductive health and wellness services",
-        image: "/images/service-4.png",
+        image: "/images/Supraja.jpg",
         icon: "heart",
         items: [
           "Male & Female Infertility Consultation",
@@ -117,25 +117,25 @@ export const siteContent = {
       {
         title: "Madhava – Diagnostic Laboratory",
         info: "Modern diagnostic services with accurate results",
-        image: "/images/service-5.png",
+        image: "/images/Madhava – Diagnostic.jpg",
         icon: "flask"
       },
       {
         title: "Bheshaja – Ayurveda Pharmacy",
         info: "Authentic Ayurvedic medicines and preparations",
-        image: "/images/service-6.png",
+        image: "/images/Bheshaja – Ayurveda.jpg",
         icon: "capsule"
       },
       {
         title: "Niramaya – Panchakarma Therapy",
         info: "Traditional detoxification and rejuvenation treatments",
-        image: "/images/service-7.png",
+        image: "/images/Niramaya – Panchakarma Therapy.jpg",
         icon: "water"
       },
       {
         title: "Ananda – Retiring & Observation Room",
         info: "Comfortable resting facilities for patient care",
-        image: "/images/service-3.png",
+        image: "/images/Retiring & Observation Room.jpg",
         icon: "bed"
       }
     ],
@@ -190,7 +190,7 @@ export const siteContent = {
         role: "Chief Physician & Director",
         experience: "25+ Years Experience",
         expertise: ["Panchakarma", "Reproductive Health", "General Ayurveda"],
-        image: "/images/doctor-1.png"
+        image: "/images/drimage.jpeg"
       },
       {
         name: "Dr. Pramod Katti",
@@ -198,7 +198,7 @@ export const siteContent = {
         role: "Senior Consultant",
         experience: "20+ Years Experience",
         expertise: ["Shalya Tantra", "Research", "Clinical Practice"],
-        image: "/images/doctor-2.png"
+        image: "/images/Pramod Katti.jpeg"
       }
     ],
     features: [

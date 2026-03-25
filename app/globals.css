@@ -13,13 +13,26 @@
     --foreground: #1a1a1a;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-white text-[#1a1a1a] antialiased;
+    @apply text-[#1a1a1a] antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(220, 252, 244, 0.7), transparent 28%),
+      radial-gradient(circle at top right, rgba(250, 204, 21, 0.08), transparent 20%),
+      linear-gradient(180deg, #fcfffe 0%, #ffffff 28%, #f8fcfb 100%);
     font-family: var(--font-outfit);
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
     font-family: var(--font-outfit);
+  }
+
+  ::selection {
+    background: rgba(0, 138, 94, 0.18);
+    color: #0f172a;
   }
 }

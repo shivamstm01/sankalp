@@ -6,33 +6,33 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white py-4 px-4 z-50 shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-white px-4 z-50 shadow-[0_4px_18px_rgba(15,23,42,0.08)] border-b border-slate-100">
+      <div className="max-w-[1560px] mx-auto h-[84px] lg:h-[92px] flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-[#008a5e] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-inner">
+        <div className="flex items-center gap-3.5">
+          <div className="w-[54px] h-[54px] bg-[#00a16a] rounded-full flex items-center justify-center text-white font-extrabold text-[20px] shadow-inner">
             S
           </div>
           <div>
-            <h1 className="font-bold text-lg leading-tight text-gray-800 tracking-tight">SANKALPA</h1>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Ayurveda Hospital</p>
+            <h1 className="font-extrabold text-[24px] lg:text-[26px] leading-none text-[#0b6b4b] tracking-tight">SANKALPA</h1>
+            <p className="text-[11px] lg:text-[12px] text-slate-500 leading-tight mt-1">Ayurveda Hospital &amp; Research Centre</p>
           </div>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           {siteContent.navigation.map((item) => (
             <a 
               key={item.label} 
               href={item.href} 
-              className="text-gray-600 hover:text-[#008a5e] font-bold transition-all text-sm uppercase tracking-wide"
+              className="text-slate-700 hover:text-[#008a5e] font-semibold transition-all text-[14px] xl:text-[15px]"
             >
               {item.label}
             </a>
           ))}
           <a 
             href="#footer"
-            className="bg-[#008a5e] text-white px-8 py-2.5 rounded-full font-bold hover:bg-[#007a52] transition-all shadow-md text-sm uppercase tracking-wider"
+            className="bg-[#00a16a] text-white px-7 py-3.5 rounded-full font-bold hover:bg-[#008a5e] transition-all shadow-sm text-[14px] xl:text-[15px] leading-none"
           >
             Contact
           </a>
@@ -54,13 +54,13 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl overflow-hidden animate-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-col p-6 space-y-4">
+          <div className="flex flex-col p-5 space-y-3">
             {siteContent.navigation.map((item) => (
               <a 
                 key={item.label} 
                 href={item.href} 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-[#008a5e] font-bold text-lg py-2 border-b border-gray-50 last:border-0"
+                className="text-gray-700 hover:text-[#008a5e] font-bold text-base py-2 border-b border-gray-50 last:border-0"
               >
                 {item.label}
               </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
             <a 
               href="#footer"
               onClick={() => setIsMenuOpen(false)}
-              className="bg-[#008a5e] text-white px-8 py-4 rounded-xl font-bold text-center shadow-lg transition-transform active:scale-95 translate-y-2"
+              className="bg-[#008a5e] text-white px-8 py-3 rounded-xl font-bold text-center shadow-lg transition-transform active:scale-95 translate-y-2"
             >
               Get in Touch
             </a>

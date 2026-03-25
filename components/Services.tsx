@@ -20,24 +20,24 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="bg-[#f8fcfb] py-20 lg:py-32 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="bg-[#f8fcfb] py-16 lg:py-24 px-4 md:px-8 overflow-hidden">
+      <div className="max-w-[1560px] mx-auto">
         
         {/* Section Heading */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl lg:text-[60px] font-black tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-[46px] font-black tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
-              <span className="absolute -bottom-3 left-0 w-full h-1.5 bg-[#008a5e] rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#008a5e] rounded-full"></span>
             </span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-base lg:text-[18px] font-medium mt-10 leading-relaxed">
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm lg:text-base font-medium mt-6 leading-relaxed">
             {subtitle}
           </p>
         </motion.div>
@@ -48,14 +48,14 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 lg:mb-28"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 lg:mb-20"
         >
           {list.map((service, idx) => (
             <motion.div 
               key={idx} 
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 flex flex-col h-full group"
+              className="bg-white rounded-[1.5rem] overflow-hidden shadow-[0_22px_60px_rgba(15,23,42,0.06)] transition-all duration-500 border border-gray-100 flex flex-col h-full group"
             >
               {/* Card Image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -69,11 +69,11 @@ export default function Services() {
               </div>
 
               {/* Card Content Area */}
-              <div className="p-8 pt-12 relative flex-1 flex flex-col">
+              <div className="p-6 pt-10 relative flex-1 flex flex-col">
                  {/* Floating Icon */}
                  <motion.div 
                     whileHover={{ rotate: 15 }}
-                    className="absolute -top-8 left-8 w-[60px] h-[60px] bg-white rounded-full border-[2.5px] border-[#008a5e] flex items-center justify-center text-[#008a5e] shadow-xl group-hover:bg-[#008a5e] group-hover:text-white transition-all duration-300"
+                    className="absolute -top-7 left-6 w-[52px] h-[52px] bg-white rounded-full border-2 border-[#008a5e] flex items-center justify-center text-[#008a5e] shadow-xl group-hover:bg-[#008a5e] group-hover:text-white transition-all duration-300"
                  >
                     <div className="scale-110">
                        {service.icon === 'clipboard' && <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>}
@@ -87,21 +87,21 @@ export default function Services() {
                     </div>
                  </motion.div>
 
-                 <h3 className="text-xl lg:text-[22px] font-black text-[#1a1a1a] mb-4 leading-tight group-hover:text-[#008a5e] transition-colors">
+                 <h3 className="text-lg lg:text-xl font-black text-[#1a1a1a] mb-3 leading-tight group-hover:text-[#008a5e] transition-colors">
                     {service.title}
                  </h3>
-                 <p className="text-gray-500 text-sm lg:text-[15px] font-medium mb-6 leading-relaxed">
+                 <p className="text-gray-500 text-sm font-medium mb-5 leading-relaxed">
                    {service.info}
                  </p>
 
                  {service.items && (
-                   <div className="mt-auto space-y-3.5 pt-6 border-t border-gray-100/50">
+                   <div className="mt-auto space-y-3 pt-5 border-t border-gray-100/50">
                       {service.items.map((item, i) => (
-                        <div key={i} className="flex items-start gap-4">
+                        <div key={i} className="flex items-start gap-3">
                            <span className="text-[#008a5e] mt-1 shrink-0">
                               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                            </span>
-                           <span className="text-xs lg:text-[14px] font-bold text-gray-400/80 leading-relaxed uppercase tracking-wider">{item}</span>
+                           <span className="text-xs lg:text-[13px] font-bold text-gray-400/80 leading-relaxed uppercase tracking-wide">{item}</span>
                         </div>
                       ))}
                    </div>
@@ -117,15 +117,15 @@ export default function Services() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[#008a5e] p-10 lg:p-16 rounded-[2.5rem] lg:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden text-center mx-auto w-full lg:max-w-6xl"
+          className="bg-[linear-gradient(135deg,#047857_0%,#059669_55%,#0f766e_100%)] p-8 lg:p-12 rounded-[2rem] lg:rounded-[2.75rem] text-white shadow-[0_30px_70px_rgba(5,150,105,0.22)] relative overflow-hidden text-center mx-auto w-full lg:max-w-5xl"
         >
-           <div className="relative z-10 flex flex-col items-center gap-6">
+           <div className="relative z-10 flex flex-col items-center gap-4">
               <motion.div 
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
-                className="mb-2"
+                className="mb-1"
               >
-                 <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 4L18.5 13.5L28 16L18.5 18.5L16 28L13.5 18.5L4 16L13.5 13.5L16 4Z" fill="#facc15" />
                     <circle cx="24" cy="8" r="1.5" fill="#facc15" />
                     <circle cx="8" cy="24" r="1" fill="#facc15" />
@@ -133,15 +133,15 @@ export default function Services() {
                  </svg>
               </motion.div>
               
-              <div className="space-y-6">
-                 <h4 className="text-3xl lg:text-[44px] font-black tracking-tight leading-tight">
+              <div className="space-y-4">
+                 <h4 className="text-2xl lg:text-[34px] font-black tracking-tight leading-tight">
                     Sannati Fertility and Wellness Centre
                  </h4>
-                 <div className="space-y-4">
-                    <p className="text-[#e6f4f1] text-lg lg:text-[22px] font-bold italic opacity-95">
-                      Making every couple's dream come true with healthy progeny – 'SUPRAJA'
+                 <div className="space-y-3">
+                    <p className="text-[#e6f4f1] text-base lg:text-[18px] font-bold italic opacity-95">
+                      Making every couple&apos;s dream come true with healthy progeny – &apos;SUPRAJA&apos;
                     </p>
-                    <p className="text-white/80 text-base lg:text-[18px] font-medium max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-white/80 text-sm lg:text-base font-medium max-w-xl mx-auto leading-relaxed">
                       Leading with innovation, integrity and empathy in reproductive health
                     </p>
                  </div>
