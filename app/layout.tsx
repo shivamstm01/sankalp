@@ -3,13 +3,13 @@ import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
-  variable: "--font-outfit",
+  variable: "--font-system-ui",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-inter-ui",
   subsets: ["latin"],
 });
 
