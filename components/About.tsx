@@ -37,7 +37,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-12 lg:py-16 px-4 md:px-8 bg-white overflow-hidden">
+    <section id="about" className="py-12 lg:py-16 px-4 md:px-8 bg-[#f8fcfb] overflow-hidden">
       <div className="max-w-[1560px] mx-auto space-y-10 lg:space-y-14">
         
         {/* Section Heading */}
@@ -45,7 +45,7 @@ export default function About() {
           {...fadeInUp}
           className="text-center"
         >
-          <h2 className="text-3xl lg:text-[46px] font-[900] tracking-tighter leading-tight text-[#1a1a1a]">
+          <h2 className="text-3xl lg:text-[46px] font-[700] tracking-tighter leading-tight text-[#1a1a1a]">
             {title.black} <span className="text-[#008a5e]">{title.green}</span>
           </h2>
           <motion.div
@@ -78,7 +78,7 @@ export default function About() {
               viewport={{ once: true }}
               className="space-y-3"
             >
-              <h3 className="text-2xl lg:text-3xl font-black text-[#008a5e]">{vision.title}</h3>
+              <h3 className="text-2xl lg:text-3xl font-[700] text-[#008a5e]">{vision.title}</h3>
               <div className="space-y-2.5">
                 {vision.paragraphs.map((p, i) => (
                   <motion.p key={i} variants={paragraphVariants} className="text-gray-600 text-[15px] lg:text-[16px] font-medium leading-[1.75] opacity-90">
@@ -172,7 +172,7 @@ export default function About() {
                     <path d="M12 21c4.97-4.35 8-7.35 8-11a4 4 0 0 0-7.17-2.49L12 8.5l-.83-.99A4 4 0 0 0 4 10c0 3.65 3.03 6.65 8 11Z"/>
                   </svg>
                 </motion.div>
-                <motion.h4 variants={itemReveal} className="text-lg lg:text-xl font-semibold text-[#1a1a1a] leading-tight">
+                <motion.h4 variants={itemReveal} className="text-lg lg:text-xl font-[700] text-[#1a1a1a] leading-tight">
                   {vision.highlight.title}
                 </motion.h4>
               </div>
@@ -182,7 +182,7 @@ export default function About() {
                     <span className="w-6 h-6 rounded-full bg-[#e8faf3] text-[#0b6b4b] flex items-center justify-center text-[11px] font-semibold shrink-0 mt-0.5">
                       {i + 1}
                     </span>
-                    <span className="text-gray-600 font-medium text-sm lg:text-[14px] leading-[1.65]">{pt}</span>
+                    <span className="text-gray-600 font-[700] text-sm lg:text-[14px] leading-[1.65]">{pt}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -219,12 +219,12 @@ export default function About() {
         </motion.div>
 
         {/* Figma Dark Green Brand Banner (Animated) */}
-        <motion.div 
+      <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[linear-gradient(135deg,#02382b_0%,#05533f_54%,#0b6b4b_100%)] p-6 lg:p-10 rounded-[2rem] text-center space-y-6 relative overflow-hidden group shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]"
+          className="bg-[linear-gradient(135deg,#0a3d2f_0%,#0f5c45_50%,#1a7a5e_100%)] p-6 lg:p-10 rounded-[2rem] text-center space-y-6 relative overflow-hidden group shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
         >
           {/* Heart Accent (Figma Style) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none pointer-events-none group-hover:scale-110 transition-transform duration-1000">
@@ -245,13 +245,13 @@ export default function About() {
             </motion.div>
             <div className="space-y-3 max-w-4xl mx-auto">
                {banner.map((line, idx) => (
-                 <motion.p 
-                   key={idx} 
+                 <motion.p
+                   key={idx}
                    initial={{ opacity: 0, y: 20 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ delay: idx * 0.12, duration: 0.35 }}
-                   className={`text-lg lg:text-[26px] font-black leading-tight tracking-tight ${idx === 1 ? 'text-[#facc15]' : idx === 2 ? 'opacity-80' : 'text-white'}`}
+                   className={`text-lg lg:text-[26px] font-black leading-tight tracking-tight ${idx === 1 ? 'text-[#facc15]' : idx === 2 ? 'text-white opacity-80' : 'text-white'}`}
                  >
                    {line}
                  </motion.p>

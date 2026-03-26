@@ -60,7 +60,7 @@ export default function Footer() {
                 <p className="text-[10px] text-[#008a5e] font-black uppercase tracking-[0.2em] mt-1">Ayurveda Hospital</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 font-medium italic">
+            <p className="text-gray-350 text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 font-medium italic">
               {description}
             </p>
             <div className="flex justify-center sm:justify-start gap-3">
@@ -81,7 +81,7 @@ export default function Footer() {
               <span className="w-2 h-2 bg-[#008a5e] rounded-full"></span>
               Quick Links
             </h4>
-            <ul className="space-y-4 text-gray-400 text-sm font-bold">
+            <ul className="space-y-4 text-gray-300 text-sm font-bold">
               {links.map((link, idx) => (
                 <li key={idx}>
                   <a href={link.href} className="hover:text-[#008a5e] transition-colors relative group">
@@ -159,7 +159,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-500 text-xs lg:text-sm font-bold text-center md:text-left">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-300 text-xs lg:text-sm font-bold text-center md:text-left">
           <p className="md:w-1/3 order-3 md:order-1">&copy; {copyright}</p>
 
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6 md:w-1/3 order-1 md:order-2">

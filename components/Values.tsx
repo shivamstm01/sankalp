@@ -23,7 +23,7 @@ export default function Values() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-[46px] font-black tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-[46px] font-[700] tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
