@@ -6,8 +6,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white px-4 z-50 shadow-[0_4px_18px_rgba(15,23,42,0.08)] border-b border-slate-100">
-      <div className="max-w-[1560px] mx-auto h-[84px] lg:h-[92px] flex justify-between items-center">
+    <nav className="bg-white px-3 md:px-2 z-50 shadow-[0_4px_18px_rgba(15,23,42,0.08)] border-b border-slate-100">
+      <div className="max-w-7xl mx-auto h-[84px] lg:h-[92px] flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3.5">
           <div className="w-[54px] h-[54px] bg-[#00a16a] rounded-full flex items-center justify-center text-white font-extrabold text-[20px] shadow-inner">
