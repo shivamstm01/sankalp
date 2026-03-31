@@ -117,7 +117,7 @@ export default function Services() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[linear-gradient(135deg,#047857_0%,#059669_55%,#0f766e_100%)] p-8 lg:p-12 rounded-[2rem] lg:rounded-[2.75rem] text-white shadow-[0_15px_40px_rgba(0,0,0,0.12)] relative overflow-hidden text-center mx-auto w-full lg:max-w-5xl"
+          className="bg-[linear-gradient(135deg,#047857_0%,#059669_55%,#0f766e_100%)] p-6 lg:p-6 rounded-[2rem] lg:rounded-[2.75rem] text-white shadow-[0_15px_40px_rgba(0,0,0,0.12)] relative overflow-hidden text-center mx-auto w-full lg:max-w-5xl"
         >
            <div className="relative z-10 flex flex-col items-center gap-4">
               <motion.div 
@@ -134,9 +134,9 @@ export default function Services() {
               </motion.div>
               
               <div className="space-y-4">
-                 <h4 className="text-2xl lg:text-[34px] font-black tracking-tight leading-tight">
-                    Sannati Fertility and Wellness Centre
-                 </h4>
+              <h4 className="text-[40px] font-semibold tracking-tight leading-tight">
+  Sannati Fertility and Wellness Centre
+</h4>
                  <div className="space-y-3">
                     <p className="text-[#e6f4f1] text-base lg:text-[18px] font-bold italic opacity-95">
                       Making every couple&apos;s dream come true with healthy progeny – &apos;SUPRAJA&apos;

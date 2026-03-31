@@ -20,13 +20,17 @@
   body {
     @apply text-[#1a1a1a] antialiased;
     background: #f8fcfb; /* FIX: removed gradient */
-    font-family: var(--font-outfit);
+    font-family: var(--font-inter-ui);
     overflow-x: hidden; /* FIX: prevent side glow */
+  }
+
+  *, *::before, *::after {
+    font-family: var(--font-inter-ui);
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
-    font-family: var(--font-outfit);
+    font-family: var(--font-inter-ui);
   }
 
   ::selection {

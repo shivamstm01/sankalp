@@ -89,7 +89,7 @@ export default function WhyUs() {
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ delay: 0.2 }}
-                   className="text-3xl lg:text-[46px] font-[700] tracking-tighter leading-tight"
+                   className="text-[45px] font-medium tracking-tighter leading-tight"
                  >
                     {banner.title}
                  </motion.h4>
@@ -117,7 +117,7 @@ export default function WhyUs() {
                       href={btn.href}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-white text-[#008a5e] px-8 lg:px-10 py-3.5 lg:py-4 rounded-full font-black text-base lg:text-lg shadow-xl hover:bg-gray-50 transition-all"
+                      className="bg-white text-[#008a5e] px-8 lg:px-10 py-3.5 lg:py-4 rounded-full font-semibold text-[length:var(--text-lg)] leading-[var(--text-lg--line-height)] shadow-xl hover:bg-gray-50 transition-all"
                     >
                        {btn.label}
                     </motion.a>
