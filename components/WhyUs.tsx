@@ -28,7 +28,7 @@ export default function WhyUs() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-[46px] font-black tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-[46px] font-[700] tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
@@ -65,7 +65,7 @@ export default function WhyUs() {
                   {IconMap[item.icon] || <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>}
                </motion.div>
                <div className="space-y-3">
-                  <h3 className="text-lg lg:text-xl font-black text-[#1a1a1a] transition-colors group-hover:text-[#008a5e]">{item.title}</h3>
+                  <h3 className="text-lg lg:text-xl font-[700] text-[#1a1a1a] transition-colors group-hover:text-[#008a5e]">{item.title}</h3>
                   <p className="text-gray-500 text-sm font-medium leading-relaxed">
                     {item.info}
                   </p>
@@ -80,7 +80,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[linear-gradient(135deg,#05533f_0%,#059669_60%,#0f766e_100%)] p-8 lg:p-14 rounded-[2rem] text-white shadow-[0_30px_70px_rgba(5,150,105,0.22)] relative overflow-hidden text-center group"
+          className="bg-[linear-gradient(135deg,#05533f_0%,#059669_60%,#0f766e_100%)] p-8 lg:p-14 rounded-[2rem] text-white shadow-[0_15px_40px_rgba(0,0,0,0.12)] relative overflow-hidden text-center group"
         >
            <div className="relative z-10 space-y-8">
               <div className="space-y-3">
@@ -89,7 +89,7 @@ export default function WhyUs() {
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ delay: 0.2 }}
-                   className="text-3xl lg:text-[46px] font-black tracking-tighter leading-tight"
+                   className="text-[45px] font-medium tracking-tighter leading-tight"
                  >
                     {banner.title}
                  </motion.h4>
@@ -117,7 +117,7 @@ export default function WhyUs() {
                       href={btn.href}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-white text-[#008a5e] px-8 lg:px-10 py-3.5 lg:py-4 rounded-full font-black text-base lg:text-lg shadow-xl hover:bg-gray-50 transition-all"
+                      className="bg-white text-[#008a5e] px-8 lg:px-10 py-3.5 lg:py-4 rounded-full font-semibold text-[length:var(--text-lg)] leading-[var(--text-lg--line-height)] shadow-xl hover:bg-gray-50 transition-all"
                     >
                        {btn.label}
                     </motion.a>

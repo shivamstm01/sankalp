@@ -17,7 +17,7 @@ export default function Physicians() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-[46px] font-black tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-[46px] font-[700] tracking-tight leading-tight">
             <span className="text-[#1a1a1a]">{title.black} </span>
             <span className="text-[#008a5e] relative inline-block">
               {title.green}
@@ -106,7 +106,7 @@ export default function Physicians() {
                       {feat.icon === 'history' && <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>}
                    </div>
                 </div>
-                <h4 className="text-base lg:text-xl font-black text-[#1a1a1a] mb-3 lg:mb-4 transition-colors group-hover:text-[#008a5e]">{feat.title}</h4>
+                <h4 className="text-base lg:text-xl font-[700] text-[#1a1a1a] mb-3 lg:mb-4 transition-colors group-hover:text-[#008a5e]">{feat.title}</h4>
                 <p className="text-gray-500 text-sm lg:text-base font-medium leading-relaxed">
                    {feat.info}
                 </p>

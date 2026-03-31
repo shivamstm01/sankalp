@@ -54,13 +54,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-14 lg:mb-20">
           <div className="space-y-6 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-3">
-              <div className="w-12 h-12 bg-[#008a5e] rounded-2xl flex items-center justify-center font-black text-xl shadow-lg border border-white/20">S</div>
+           <div className="w-16 h-16 sm:w-18 sm:h-18">
+  <img
+    src="/images/sankalplogo.png"
+    alt="Sankalpa Logo"
+    className="object-contain w-full h-full"
+  />
+</div>
               <div>
-                <h3 className="text-xl font-black leading-none tracking-tight">SANKALPA</h3>
+                <h3 className="text-xl font-black font-semibold leading-none tracking-tight">SANKALPA</h3>
                 <p className="text-[10px] text-[#008a5e] font-black uppercase tracking-[0.2em] mt-1">Ayurveda Hospital</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 font-medium italic">
+            <p className="text-gray-350 text-sm leading-relaxed max-w-xs mx-auto sm:mx-0 font-medium italic">
               {description}
             </p>
             <div className="flex justify-center sm:justify-start gap-3">
@@ -77,11 +83,11 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-left">
-            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white flex items-center justify-center sm:justify-start gap-3">
-              <span className="w-2 h-2 bg-[#008a5e] rounded-full"></span>
+            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white font-semibold flex items-center justify-center sm:justify-start gap-3">
+              <span className="w-2 h-2 bg-[#008a5e] font-semibold rounded-full"></span>
               Quick Links
             </h4>
-            <ul className="space-y-4 text-gray-400 text-sm font-bold">
+            <ul className="space-y-4 text-gray-300 text-sm font-bold">
               {links.map((link, idx) => (
                 <li key={idx}>
                   <a href={link.href} className="hover:text-[#008a5e] transition-colors relative group">
@@ -94,7 +100,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-left">
-            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white flex items-center justify-center sm:justify-start gap-3">
+            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white flex items-center justify-center sm:justify-start gap-3 font-semibold">
               <span className="w-2 h-2 bg-[#008a5e] rounded-full"></span>
               Contact Us
             </h4>
@@ -121,7 +127,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center sm:text-left">
-            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white flex items-center justify-center sm:justify-start gap-3">
+            <h4 className="text-base lg:text-lg font-black mb-5 lg:mb-6 text-white flex items-center justify-center sm:justify-start gap-3 font-semibold">
               <span className="w-2 h-2 bg-[#008a5e] rounded-full"></span>
               Working Hours
             </h4>
@@ -139,14 +145,14 @@ export default function Footer() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-black text-white text-sm lg:text-base mb-1">{item.days}</p>
-                      <p className="text-gray-400 font-bold text-sm">{item.time}</p>
+                      <p className="font-black text-white text-sm lg:text-base mb-1 font-semibold">{item.days}</p>
+                      <p className="text-gray-400 font-bold text-sm font-semibold">{item.time}</p>
                     </div>
                   </div>
                 </div>
               ))}
               <div className="rounded-[1.35rem] border border-[#f43f5e]/15 bg-[#f43f5e]/[0.04] p-4 shadow-[0_14px_30px_rgba(0,0,0,0.12)]">
-                <p className="text-[#34d399] font-black text-xs lg:text-sm uppercase tracking-widest mb-2 flex items-center justify-center sm:justify-start gap-2">
+                <p className="text-[#34d399] font-black text-xs lg:text-sm uppercase tracking-widest mb-2 flex items-center justify-center sm:justify-start gap-2 font-semibold">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-[#f43f5e] opacity-75 animate-ping"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#f87171]"></span>
@@ -159,7 +165,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-500 text-xs lg:text-sm font-bold text-center md:text-left">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-300 text-xs lg:text-sm font-bold text-center md:text-left">
           <p className="md:w-1/3 order-3 md:order-1">&copy; {copyright}</p>
 
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6 md:w-1/3 order-1 md:order-2">
