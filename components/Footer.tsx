@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-14 lg:mb-20">
           <div className="space-y-6 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-3">
-           <div>
+           <div className="w-16 h-16 sm:w-18 sm:h-18">
   <img
     src="/images/sankalplogo.png"
     alt="Sankalpa Logo"
