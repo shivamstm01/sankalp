@@ -165,7 +165,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-300 text-xs lg:text-sm font-bold text-center md:text-left">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center font-medium justify-between gap-6 text-gray-300 text-xs lg:text-sm font-bold text-center md:text-left">
           <p className="md:w-1/3 order-3 md:order-1">&copy; {copyright}</p>
 
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6 md:w-1/3 order-1 md:order-2">
