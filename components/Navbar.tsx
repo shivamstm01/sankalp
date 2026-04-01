@@ -31,6 +31,12 @@ export default function Navbar() {
             </a>
           ))}
           <a 
+            href="https://www.eka.care/doctor/santrupti-katti-1753779208"
+            className="border-2 border-[#00a16a] text-[#00a16a] px-6 xl:px-7 2xl:px-8 py-3 xl:py-3.5 rounded-full font-bold hover:bg-[#00a16a]/10 transition-all text-[14px] xl:text-[15px] 2xl:text-[16px] leading-none"
+          >
+            Book Appointment
+          </a>
+          <a 
             href="#footer"
             className="bg-[#00a16a] text-white px-6 xl:px-7 2xl:px-8 py-3 xl:py-3.5 rounded-full font-bold hover:bg-[#008a5e] transition-all shadow-sm text-[14px] xl:text-[15px] 2xl:text-[16px] leading-none"
           >
@@ -65,6 +71,13 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
+            <a 
+              href="https://www.eka.care/doctor/santrupti-katti-1753779208"
+              onClick={() => setIsMenuOpen(false)}
+              className="border-2 border-[#008a5e] text-[#008a5e] px-6 sm:px-8 py-3 rounded-xl font-bold text-center shadow-sm transition-transform active:scale-95 translate-y-2"
+            >
+              Book Appointment
+            </a>
             <a 
               href="#footer"
               onClick={() => setIsMenuOpen(false)}
