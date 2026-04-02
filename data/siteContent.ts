@@ -16,7 +16,7 @@ export const siteContent = {
     subheading: "Healing with Wisdom, Research with Purpose",
     description: "Where ancient Ayurvedic wisdom meets modern research, nurturing health, harmony, and hope for humanity.",
     buttons: [
-      { label: "Book Appointment", href: "#footer", variant: "primary" },
+      { label: "Book Appointment", href: "https://www.eka.care/doctor/santrupti-katti-1753779208", variant: "primary" },
       { label: "Our Services", href: "#services", variant: "outline" },
     ],
     image: "/images/drimage.jpeg",
@@ -241,7 +241,7 @@ export const siteContent = {
       title: "Not Just Treatment, But Transformation",
       tagline: "Choose Sankalpa – Where Tradition Heals, and Research Reveals",
       buttons: [
-        { label: "Book Your Appointment", href: "#footer" },
+        { label: "Book Your Appointment", href: "https://www.eka.care/doctor/santrupti-katti-1753779208" },
         { label: "Explore Services", href: "#services" }
       ]
     }
